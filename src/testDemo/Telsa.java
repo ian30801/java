@@ -1,6 +1,9 @@
 package testDemo;
 
 public class Telsa extends Car implements Vehicle {
+	double i = 0;
+	double energy = 100;
+	double m = 0;
 
 	public void show() {
 		super.brand = "特斯拉";
@@ -20,17 +23,16 @@ public class Telsa extends Car implements Vehicle {
 	}
 
 	@Override
-	public void move(int m) {
-		System.out.println("當前里程數:" + m + "km");
-		kilometer += m;
-		System.out.println("總里程數=" + kilometer + "km");
-		energy = (75 - (kilometer / 7)) / 75 * 100; // 剩餘電量%數
+	public void addEnergy(String a) {
 		// System.out.println((Math.round(energy * 100.0) / 100.0));
 		// 一度電跑七公里,充飽75度電,總共525公里,一小時7.5度電
-		double i = 0;
-		double c = kilometer / 7; // 耗電量(度)
+		// kilometer += m;
+		energy = 100 - (kilometer / 525 * 100);
+		double c = kilometer / 7;
 		if (m > 472.5) {
 			System.out.println("電動車能源剩餘量" + (Math.round(energy * 100) / 100.0) + "% ");
+			// 耗電量(度)
+			
 			System.out.println((Math.round(c * 100) / 100.0) + "度");
 			while (c >= 7.5) {
 				if (c >= 7.5) { // 電量小於100%
@@ -45,6 +47,7 @@ public class Telsa extends Car implements Vehicle {
 			System.out.println("電量已經充滿,總共充了" + (Math.round(i * 100) / 100.0) + "小時");
 		} else if (kilometer > 472.5) {
 			System.out.println("電動車能源剩餘量" + (Math.round(energy * 100) / 100.0) + "% ");
+			// 耗電量(度)
 			System.out.println((Math.round(c * 100) / 100.0) + "度");
 			while (c >= 7.5) {
 				if (c >= 7.5) { // 電量小於100%
@@ -60,7 +63,24 @@ public class Telsa extends Car implements Vehicle {
 		} else {
 			System.out.println("電量充足");
 		}
+	}
 
+	@Override
+	public void stop(String s) {
+		if (m > 472.5) {
+			System.out.println("電量不足,引擎無法發動");
+		} else if (kilometer > 472.5) {
+			System.out.println("電量不足,引擎無法發動");
+		} else {
+			System.out.println("電量充足,引擎已發動");
+		}
+	};
+
+	@Override
+	public void move(int m) {
+		System.out.println("當前里程數:" + m + "km");
+		kilometer += m;
+		System.out.println("總里程數=" + kilometer + "km");
 	};
 
 }

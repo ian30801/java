@@ -5,10 +5,13 @@ public class Demo {
 		Telsa t = new Telsa();
 		t.show();
 		t.launch("PUSH START");
+		t.stop("發動");
 		t.move(200);
 		t.move(300);
-
-//		Gogoro g = new Gogoro();
+		t.stop("發動");
+		t.addEnergy("充電");
+		
+//		Gogoros g = new Gogoro();
 //		g.show();
 //		g.launch("PUSH START");
 //		g.move(140);

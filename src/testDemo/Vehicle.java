@@ -5,8 +5,7 @@ public interface Vehicle { // 車輛介面
 
 	public void move(int m); // 移動里程
 
-//		public void kilometer(int k);
-//		public void chargeEnergy();
-//		public void stop();
-//		public void fullEnergy();
+	public void stop(String s);
+
+	public void addEnergy(String a);
 }

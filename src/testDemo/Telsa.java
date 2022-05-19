@@ -23,7 +23,7 @@ public class Telsa extends Car implements Vehicle {
 	}
 
 	@Override
-	public void addEnergy(String a) {
+	public void addEnergy() {
 		// System.out.println((Math.round(energy * 100.0) / 100.0));
 		// 一度電跑七公里,充飽75度電,總共525公里,一小時7.5度電
 		// kilometer += m;
@@ -45,6 +45,7 @@ public class Telsa extends Car implements Vehicle {
 				i += c / 7.5;
 			}
 			System.out.println("電量已經充滿,總共充了" + (Math.round(i * 100) / 100.0) + "小時");
+			m=0;
 		} else if (kilometer > 472.5) {
 			System.out.println("電動車能源剩餘量" + (Math.round(energy * 100) / 100.0) + "% ");
 			// 耗電量(度)
@@ -60,13 +61,14 @@ public class Telsa extends Car implements Vehicle {
 				i += c / 7.5;
 			}
 			System.out.println("電量已經充滿,總共充了" + (Math.round(i * 100) / 100.0) + "小時");
+			kilometer=0;
 		} else {
 			System.out.println("電量充足");
 		}
 	}
 
 	@Override
-	public void stop(String s) {
+	public void stop() {
 		if (m > 472.5) {
 			System.out.println("電量不足,引擎無法發動");
 		} else if (kilometer > 472.5) {

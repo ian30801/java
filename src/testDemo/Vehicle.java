@@ -12,5 +12,5 @@ public interface Vehicle {
 
 	// 補充能源
 	public void addEnergy(); 
-	/1111111
+	
 }

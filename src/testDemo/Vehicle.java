@@ -1,11 +1,15 @@
 package testDemo;
 
-public interface Vehicle { // 車輛介面
-	public void launch(String s); // 發動方式
+public interface Vehicle {
+	// 發動方式 
+	public void launch(String launch); 
+	
+	// 移動里程
+	public void move(int move); 
+	
+	// 停止
+	public void stop(); 
 
-	public void move(int m); // 移動里程
-
-	public void stop();
-
-	public void addEnergy();
+	// 補充能源
+	public void addEnergy(); 
 }

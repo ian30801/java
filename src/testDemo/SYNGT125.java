@@ -1,6 +1,6 @@
 package testDemo;
 
-public class SYNGT125 extends Motor implements Vehicle {
+public class SYNGT125 extends Motor {
 
 	public void show() {
 		super.brand = "SYN";

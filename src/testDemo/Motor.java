@@ -1,6 +1,6 @@
 package testDemo;
 
-abstract class Motor {
+abstract class Motor  implements Vehicle {
 	protected String brand; // 品牌
 	protected String model; // 型號
 	protected double launchVolume; // 排氣量

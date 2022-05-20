@@ -3,8 +3,11 @@ package testDemo;
 public class Demo {
 	public static void main(String[] args) {
 		Telsa t = new Telsa();
-		t.show();
-		t.launch("PUSH START");
+//		System.out.println(t.getBrand());
+//		System.out.println(t.getChargeType());
+//		System.out.println(t.getLaunchVolume());
+//		System.out.println(t.wheelNum + "輪");
+//		t.launch("PUSH START");
 		t.stop();
 		t.move(200);
 		t.move(300);
@@ -12,7 +15,6 @@ public class Demo {
 		t.addEnergy();
 		t.stop();
 
-		
 //		Gogoros g = new Gogoro();
 //		g.show();
 //		g.launch("PUSH START");

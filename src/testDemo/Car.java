@@ -1,28 +1,108 @@
 package testDemo;
 
-abstract class Car {
-	protected String brand; // 品牌
-	protected String model; // 型號
-	protected int launchVolume; // 排氣量
-	protected String launch; // 發動方式
-	protected String chargeType; // 補充能源方式
-	protected String wheelNum; // 輪子數量
-	protected String velocity; // 速度
+abstract class Car implements Vehicle {
+	private String brand; // 品牌
+	private String model; // 型號
+	private int launchVolume; // 排氣量
+	private String launch; // 發動方式
+	private String chargeType; // 補充能源方式
+	final int wheelNum = 4; // 輪子數量
+	private String velocity; // 速度
 	protected double kilometer; // 行駛里程數
-	protected int fullEnergy; // 能源滿載量
-	protected double lowElectricity; // 能源剩餘量
-	protected double energy; // 能源(%)
+	private int fullEnergy; // 能源滿載量
+	private double lowElectricity; // 能源剩餘量
+	private double energy; // 能源(%)
 
-	public void show() {
-		System.out.println("品牌:" + brand);
-		System.out.println("型號:" + model);
-		System.out.println("排氣量:" + launchVolume + "cc");
-//		System.out.println("發動方式:" + launch);
-		System.out.println("補充能源方式:" + chargeType);
-		System.out.println("輪子數量:" + wheelNum);
-		System.out.println("速度:" + velocity);
-		System.out.println("行駛里程數:" + kilometer);
-		System.out.println("能源滿載量:" + fullEnergy + "%");
+	public String getBrand() {
+		return brand;
 	}
 
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public int getLaunchVolume() {
+		return launchVolume;
+	}
+
+	public void setLaunchVolume(int launchVolume) {
+		this.launchVolume = launchVolume;
+	}
+
+	public String getLaunch() {
+		return launch;
+	}
+
+	public void setLaunch(String launch) {
+		this.launch = launch;
+	}
+
+	public String getChargeType() {
+		return chargeType;
+	}
+
+	public void setChargeType(String chargeType) {
+		this.chargeType = chargeType;
+	}
+
+	public String getVelocity() {
+		return velocity;
+	}
+
+	public void setVelocity(String velocity) {
+		this.velocity = velocity;
+	}
+
+	public double getKilometer() {
+		return kilometer;
+	}
+
+	public void setKilometer(double kilometer) {
+		this.kilometer = kilometer;
+	}
+
+	public int getFullEnergy() {
+		return fullEnergy;
+	}
+
+	public void setFullEnergy(int fullEnergy) {
+		this.fullEnergy = fullEnergy;
+	}
+
+	public double getLowElectricity() {
+		return lowElectricity;
+	}
+
+	public void setLowElectricity(double lowElectricity) {
+		this.lowElectricity = lowElectricity;
+	}
+
+	public double getEnergy() {
+		return energy;
+	}
+
+	public void setEnergy(double energy) {
+		this.energy = energy;
+	}
+
+	@Override
+	public void launch(String s) {
+		System.out.println("發動方式:" + s);
+	}
+
+	@Override
+	public void move(int move) {
+		this.kilometer+=move;
+//		System.out.println("當前里程數:" + move + "km");
+//		kilometer += move;
+		System.out.println("總里程數=" + this.kilometer + "km");
+	};
 }
